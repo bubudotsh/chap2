@@ -12,16 +12,19 @@
 #include <iostream>
 using namespace std;
 
-double transformeEnCarre( double xmin , double ymin, double &xmax, double &ymax) {
+double transformeEnCarre(double xmin, double &xmax, double ymin, double &ymax) {
     double x = xmax - xmin;
     double y = ymax - ymin;
 
-    if (ymax < xmax) {
-        xmax = xmin + y;
-        return (xmax);
-    } else {
-        ymax = ymin + x;
-        return (ymax);
+    if (x > y)
+    {
+        y = ymax - ymin;
+        xmax = y + xmin;
+    }
+    else if (y > x)
+    {
+        x = xmax - xmin;
+        ymax = x + ymin;
     }
 }
 
@@ -32,7 +35,8 @@ int main() {
     cout << "Enter xmin, ymin, xmax, ymax" << endl;
     cin >> xmin >> ymin >> xmax >> ymax;
 
-    cout << "xmin: " << xmin << " ymin: " << ymin << " ymax: " << transformeEnCarre(xmin, ymin, xmax, ymax) << " xmax: " << transformeEnCarre(xmin, ymin, xmax, ymax);
+    transformeEnCarre(xmin, xmax, ymin, ymax);
+    cout <<"xmin= "<< xmin << "," <<"xmax= "<< xmax << "," <<"ymin= "<< ymin << "," <<"ymax= "<<ymax  << endl;
 
 	cin.get(); cin.ignore();
 
