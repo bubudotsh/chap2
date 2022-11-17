@@ -16,11 +16,13 @@ using namespace std;
 void hanoi (int n, int depart, int arrivee) {
     int i = ((depart + arrivee) - 3) * (-1);
 
-    n--;
+    if (n != 0) {
+        hanoi (n - 1, depart, i);
+        cout << "Deplacement d'un disque de " << depart << " vers " << arrivee << endl;
+        hanoi (n - 1, i, arrivee);
+    } else {
 
-    cout << "Deplacement d'un disque de " << depart << " vers " << arrivee << endl;
-
-    hanoi
+    }
 }
 
 
