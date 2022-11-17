@@ -1,6 +1,6 @@
 /**********************************************
 
-   Description: squelette 
+   Description:
 
    by: BUNELIER Hugo | github bubudotsh
 
